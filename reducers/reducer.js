@@ -3,10 +3,15 @@
 
 export const initialState={pagina:0};
 
-export default (state=initialState,actions)=>{
-  switch(actions.type)
-  {case'next':return state+1;
-  case'back':return state-1;
+export default (state=initialState,action)=>{
+  console.log(action.type)
+  switch(action.type)
+  {case'next':
+  console.log('weps')
+  return state+1;
+  case'back':
+  console.log("what up")
+  return state-1;
   default:return state
 
 }

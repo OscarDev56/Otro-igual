@@ -1,19 +1,19 @@
 
 
  const next=()=>{
+   console.log('next')
     return{
     type:'next',
-    siguien:state+1,
     
     }
 }
 
 
  const back=()=>{
+   console.log("back")
 return{ 
     type:'back',
-  anterior:state-1,
    }
 }
 
-export default {next,back}
+export {next,back}
