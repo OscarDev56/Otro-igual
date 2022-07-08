@@ -6,14 +6,13 @@ import store from './index2'
 import { AppRegistry } from "react-native";
 
 export default function App() {
-  return (<Provider store={store}>
-    <View>
+  return (
+  <View>
+    <Provider store={store}>
       <Tarjeta/>
-
-    </View>
-
-  </Provider>
+    </Provider>
+  </View>
     
    )};
   
-   AppRegistry.registerComponent('Appname', () => App);
+  
