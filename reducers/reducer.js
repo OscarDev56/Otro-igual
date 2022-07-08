@@ -1,28 +1,13 @@
 
 
-export const initialState={
-  pagina:0,
-};
 
- const reducer = (state=initialState, actions)=>{
-  if(actions.type === 'next'){
-    return{
-      ...state,
-      pagina:state.pagina+1}
-  }
-  if(actions.type === 'back'){
-    return{
-      ...state,
-      pagina:state.pagina-1
-    }
-  }
-  else{
-    return{
-      state
-    }
-  }
+export const initialState={pagina:0};
 
-  
+export default (state=initialState,actions)=>{
+  switch(actions.type)
+  {case'next':return state+1;
+  case'back':return state-1;
+  default:return state
 
 }
-export default reducer
+};
