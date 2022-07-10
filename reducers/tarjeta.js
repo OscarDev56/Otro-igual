@@ -2,17 +2,19 @@
 
 import { connect} from "react-redux"
 import {next,back} from './actions'
-import {StyleSheet,Button, Text, View,} from 'react-native';
+import {StyleSheet,Button, Text, View, Touchable,} from 'react-native';
+import { TouchableOpacity } from "react-native-web";
+
 
 
 const Tarjeta=(props)=>{
-console.log(props)
+
   return(
     <View style={styles.contenedor}>
-    <Text style={styles.text}>Pagina principal</Text>
+    <Text style={styles.text}>{props.pagina}</Text>
     <Button 
     onPress={()=>{props.next()}}
-    title={'next'}></Button>
+    title={'back'}></Button>
     <Button 
     onPress={()=>{props.back()}}
     title={'back'}></Button>
@@ -21,9 +23,18 @@ console.log(props)
 };
 
 const styles = StyleSheet.create({
-text: {
-justifyContent:"center",
+ 
+   contenedor:{    
+    backgroundColor: 'black',
+   justifyContent:"center",
   alignContent:"center",
+
+  },
+  text: {
+    
+    justifyContent:"center",
+  alignContent:"center",
+
 color: 'blue',
 fontWeight: 'bold',
 fontSize: 30,
@@ -42,7 +53,7 @@ return {
 
 const MapStateToProps = (state) =>{
   return{
-    pagina:state=>state.pagina
+    pagina:state.reducer.pagina
   }
 }
 
