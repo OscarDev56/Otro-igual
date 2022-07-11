@@ -1,24 +1,29 @@
 
 
 import { connect} from "react-redux"
-import {next,back} from './actions'
-import {StyleSheet,Button, Text, View, Touchable,} from 'react-native';
-import { TouchableOpacity } from "react-native-web";
+import {next,back} from '../actions/actions'
+import {StyleSheet,Button, Text, View,} from 'react-native';
 
 
 
-const Tarjeta=(props)=>{
+
+const Tarjeta=(props,{navigation})=>{
 
   return(
     <View style={styles.contenedor}>
     <Text style={styles.text}>{props.pagina}</Text>
     <Button 
     onPress={()=>{props.next()}}
-    title={'back'}></Button>
+    title={'+1'}></Button>
     <Button 
     onPress={()=>{props.back()}}
-    title={'back'}></Button>
+    title={'-1'}></Button>
+    <Button
+    title='siguiente'
+    onPress={()=>{navigation.navigate('pagina')}}/>
+     
   </View>
+  
 );
 };
 
