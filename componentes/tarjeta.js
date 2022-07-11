@@ -7,11 +7,10 @@ import {StyleSheet,Button, Text, View,} from 'react-native';
 
 
 
-const Tarjeta=(props,{navigation})=>{
-
+const Tarjeta=(props)=>{
+  console.log("weps 2",props)
   return(
     <View style={styles.contenedor}>
-    <Text style={styles.text}>{props.pagina}</Text>
     <Button 
     onPress={()=>{props.next()}}
     title={'+1'}></Button>
@@ -20,7 +19,7 @@ const Tarjeta=(props,{navigation})=>{
     title={'-1'}></Button>
     <Button
     title='siguiente'
-    onPress={()=>{navigation.navigate('pagina')}}/>
+    onPress={()=>{props.navigation.navigate("Pagina")}}/>
      
   </View>
   
@@ -33,13 +32,14 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
    justifyContent:"center",
   alignContent:"center",
+  flex:1,
 
   },
   text: {
-    
-    justifyContent:"center",
-  alignContent:"center",
-
+alignSelf:"center",
+margin:20,
+justifyContent:"center",
+alignContent:"center",
 color: 'blue',
 fontWeight: 'bold',
 fontSize: 30,

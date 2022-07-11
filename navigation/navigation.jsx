@@ -1,19 +1,21 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
-import {Tarjeta} from '../componentes/tarjeta';
-import {Pagina} from "../componentes/pagina";
+import {Text} from "react-native"
+import Tarjeta from '../componentes/tarjeta';
+import Pagina from "../componentes/pagina";
 
-const stack=createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 
-export const MainStack=()=>{
+ const MainStack = (props) => {
+     console.log("weps",props)
     return(
         <NavigationContainer>
-            <stack.Navigator>
-                <stack.screen name='home' component={Tarjeta}/>
-                <stack.screen name='pagina' component={Pagina}/>
-            </stack.Navigator>
-
+            <Stack.Navigator >
+                <Stack.Screen name='Home' component={Tarjeta}/>
+                <Stack.Screen name='Pagina' component={Pagina}/>
+            </Stack.Navigator>
         </NavigationContainer>
-
     )
 }
+
+export default MainStack;
