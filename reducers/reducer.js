@@ -1,7 +1,6 @@
 
 
-
-export const initialState={pagina:0};
+const initialState={pagina:0};
 
 export default (state=initialState,action)=>{
  
