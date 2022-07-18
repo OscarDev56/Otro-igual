@@ -8,18 +8,29 @@ import {StyleSheet,Button, Text, View,} from 'react-native';
 
 
 const Tarjeta=(props)=>{
-  console.log("weps 2",props)
+ 
   return(
     <View style={styles.contenedor}>
+      <Text 
+      onPress={()=>{props.navigation.navigate("P2")}}
+      style={styles.text}>
+        {props.pagina}
+      </Text>
     <Button 
-    onPress={()=>{props.next()}}
+    onPress={()=>{props.lameraNeta()}}
     title={'+1'}></Button>
     <Button 
-    onPress={()=>{props.back()}}
+    onPress={()=>{props.baack()}}
     title={'-1'}></Button>
     <Button
-    title='siguiente'
-    onPress={()=>{props.navigation.navigate("Pagina")}}/>
+    title='ir a Pagina 1'
+    onPress={()=>{props.navigation.navigate("P1")}}/>
+    <Button
+           title='ir a pagina 2'
+           onPress={()=>{props.navigation.navigate("P2")}}/>
+   <Button
+    title='ir a PAgina 3'
+    onPress={()=>{props.navigation.navigate("P3")}}/>
      
   </View>
   
@@ -42,7 +53,7 @@ justifyContent:"center",
 alignContent:"center",
 color: 'blue',
 fontWeight: 'bold',
-fontSize: 30,
+fontSize: 150,
 },
 
 
@@ -51,8 +62,8 @@ fontSize: 30,
 
 const MapDispatchToProps = (dispatch)=>{
 return {
-  next:()=>dispatch(next()),
-  back:()=>dispatch(back())
+  lameraNeta:()=>dispatch(next()),
+  baack:()=>dispatch(back())
 }
 }
 
