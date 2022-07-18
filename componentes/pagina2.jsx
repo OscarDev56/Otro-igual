@@ -3,6 +3,7 @@ import { connect} from "react-redux"
 import {next,back} from '../actions/actions'
 
 const Pagina2=(props)=>{
+  
     return(
      <View style={styles.contenedor}>
           <Text style={styles.text}>asrr
@@ -16,8 +17,12 @@ const Pagina2=(props)=>{
         title={'-50'}></Button>
       
       <Button
-            title='siguientee'
+            title='home'
              onPress={()=>{props.navigation.navigate("Home")}}/>
+             
+      <Button
+            title='siguientee'
+             onPress={()=>{props.navigation.navigate("P3")}}/>
      
         
         
@@ -41,7 +46,7 @@ alignSelf:"center",
 margin:20,
 justifyContent:"center",
 alignContent:"center",
-color: 'blue',
+color: 'gray',
 fontWeight: 'bold',
 fontSize: 200,
 },
